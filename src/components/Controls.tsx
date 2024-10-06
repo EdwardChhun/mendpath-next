@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useVoice, VoiceReadyState } from "@humeai/voice-react";
 import { Mic, MicOff, Send } from 'lucide-react';
-import { JSONMessage as HumeJSONMessage } from '@humeai/voice-react';
+// import { JSONMessage as HumeJSONMessage } from '@humeai/voice-react';
 
 export default function Controls() {
   const { connect, disconnect, readyState, messages } = useVoice();
@@ -10,7 +10,7 @@ export default function Controls() {
   const [chatHistory, setChatHistory] = useState([
     { text: 'Welcome to MendPath. How can I assist you today?', sender: 'bot' },
   ]);
-  const [hasAudioPermission, setHasAudioPermission] = useState(false);
+  const [, setHasAudioPermission] = useState(false);
   const [isRequestingPermission, setIsRequestingPermission] = useState(false);
 
   // Add this useEffect hook to handle incoming messages
@@ -101,7 +101,7 @@ export default function Controls() {
 
       <div className="flex-1 overflow-auto p-4">
         <div className="bg-blue-900 bg-opacity-10 p-4 mb-4 rounded-lg text-center">
-          <p>Hotline: 9999999</p>
+          <p>Crisis Hotline: 998</p>
           <p>Emergency: 911</p>
         </div>
         {chatHistory.map((chat, index) => (
