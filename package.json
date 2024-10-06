@@ -10,11 +10,16 @@
     "server": "node server.js"
   },
   "dependencies": {
+    "@ar-js-org/ar.js": "github:AR-js-org/AR.js#feature-type-definitions",
     "@humeai/voice-react": "^0.1.15",
+    "@react-three/fiber": "^8.17.9",
+    "@types/three": "^0.169.0",
+    "fs": "^0.0.1-security",
     "lucide-react": "^0.447.0",
     "next": "^14.2.14",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "three": "^0.169.0"
   },
   "devDependencies": {
     "@types/node": "^20",
