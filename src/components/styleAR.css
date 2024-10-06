@@ -1,0 +1,19 @@
+.ar-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Make it fill the entire viewport height */
+    overflow: hidden;
+    display:none
+  }
+  
+  .ar-scene {
+    width: 100%;
+    height: 100%;
+    display:none
+  }
+  
+  a-scene {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
