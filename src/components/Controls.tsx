@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useVoice, VoiceReadyState } from "@humeai/voice-react";
 import { Mic, MicOff, Send } from 'lucide-react';
+import { JSONMessage as HumeJSONMessage } from '@humeai/voice-react';
 
 export default function Controls() {
   const { connect, disconnect, readyState, messages } = useVoice();
@@ -15,13 +16,11 @@ export default function Controls() {
   // Add this useEffect hook to handle incoming messages
   React.useEffect(() => {
     if (messages.length > 0) {
-      const lastMessage: any = messages[messages.length - 1];
-      console.log(lastMessage as any);
-      if (lastMessage.message && 'content' in lastMessage.message) {
-        if (lastMessage.type === 'user_message') {
-          setChatHistory(prev => [...prev, { text: lastMessage.message.content, sender: 'user' }]);
-        } else {
-          setChatHistory(prev => [...prev, { text: lastMessage.message.content, sender: 'bot' }]);
+      const lastMessage = messages[messages.length - 1];
+      if (lastMessage.type === 'user_message' || lastMessage.type === 'assistant_message') {
+        const content = lastMessage.message.content;
+        if (content) {
+          setChatHistory(prev => [...prev, { text: content, sender: lastMessage.type === 'user_message' ? 'user' : 'bot' }]);
         }
       }
     }
