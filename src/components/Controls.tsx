@@ -15,13 +15,12 @@ export default function Controls() {
   // Add this useEffect hook to handle incoming messages
   React.useEffect(() => {
     if (messages.length > 0) {
-      const lastMessage: any= messages[messages.length - 1];
+      const lastMessage: any = messages[messages.length - 1];
       console.log(lastMessage as any);
       if (lastMessage.message && 'content' in lastMessage.message) {
         if (lastMessage.type === 'user_message') {
           setChatHistory(prev => [...prev, { text: lastMessage.message.content, sender: 'user' }]);
-        }
-        else{
+        } else {
           setChatHistory(prev => [...prev, { text: lastMessage.message.content, sender: 'bot' }]);
         }
       }
@@ -96,7 +95,7 @@ export default function Controls() {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-[#001F3F] text-white">
+    <div className="flex flex-col h-screen bg-[#e0d4c8] text-black">
       <header className="flex justify-between items-center p-4 border-b border-gray-600">
         <h1 className="text-xl font-bold">MendPath</h1>
       </header>
@@ -109,7 +108,7 @@ export default function Controls() {
         {chatHistory.map((chat, index) => (
           <div key={index} className={`mb-4 ${chat.sender === 'user' ? 'flex justify-end' : 'flex justify-start'}`}>
             <span className={`inline-block p-3 rounded-lg max-w-[70%] ${
-              chat.sender === 'user' ? 'bg-green-500' : 'bg-[#002a54] border border-gray-600'
+              chat.sender === 'user' ? 'bg-[#e3beb3]' : 'bg-white border border-gray-600'
             }`}>
               {chat.text}
             </span>
@@ -117,11 +116,11 @@ export default function Controls() {
         ))}
       </div>
 
-      <div className="p-4 border-t border-gray-600 bg-[#002a54]">
+      <div className="p-4 border-t border-gray-600 bg-[#FFFFFF]">
         <div className="flex items-center">
           <button
             onClick={readyState === VoiceReadyState.OPEN ? handleDisconnect : handleConnect}
-            className="p-2 rounded-full bg-blue-500 mr-2"
+            className="p-2 rounded-full bg-[#5e4d43] mr-2"
             disabled={isRequestingPermission}
           >
             {isRequestingPermission ? (
@@ -137,9 +136,9 @@ export default function Controls() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Type your message..."
-            className="flex-1 p-2 rounded-full bg-[#001F3F] border border-gray-600 text-white"
+            className="flex-1 p-2 rounded-full border border-gray-600 text-black"
           />
-          <button onClick={sendMessage} className="p-2 rounded-full bg-green-500 ml-2">
+          <button onClick={sendMessage} className="p-2 rounded-full bg-[#5e4d43] ml-2">
             <Send size={24} />
           </button>
         </div>
