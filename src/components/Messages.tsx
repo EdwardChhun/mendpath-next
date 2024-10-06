@@ -7,7 +7,7 @@ export default function Messages() {
 
   return (
     <div>
-      {messages.map((msg, index) => {
+      {messages.map((msg) => {
         if (msg.type === "user_message" || msg.type === "assistant_message") {
           // return (
           //   <div key={msg.type + index}>
