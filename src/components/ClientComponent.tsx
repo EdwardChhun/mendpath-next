@@ -10,7 +10,7 @@ export default function ClientComponent({
   accessToken: string;
 }) {
   return (
-    <VoiceProvider configId={process.env.NEXT_PUBLIC_HUME_CONFIG_ID} auth={{ type: "accessToken", value: accessToken }}>
+    <VoiceProvider configId={"0ea173e1-6531-4b37-b43e-9d6409ef29ee"} auth={{ type: "accessToken", value: accessToken }}>
       <Messages />
       <Controls />
     </VoiceProvider>
