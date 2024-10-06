@@ -5,8 +5,7 @@ import ReactDOM from "react-dom"
 import React from "react"
 import "@ar-js-org/ar.js";
 
-export default function Page() {
-
+export default function ARScene() {
   useEffect(() => {
   }, []);
 
@@ -21,7 +20,7 @@ export default function Page() {
       </Head>
       
       <body style={{ margin: 0, overflow: 'hidden' }}>
-          <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: true;">
+          <a-scene embedded arjs="sourceType: webcam;">
             <a-assets>
               <a-asset-item
                 id="therapist"
