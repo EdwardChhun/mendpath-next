@@ -10,6 +10,7 @@
     "server": "node server.js"
   },
   "dependencies": {
+    "@ar-js-org/ar.js": "^3.4.5",
     "@humeai/voice-react": "^0.1.15",
     "@react-three/fiber": "^8.17.9",
     "@types/three": "^0.169.0",

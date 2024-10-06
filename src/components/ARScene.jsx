@@ -22,7 +22,7 @@ export default function ARScene() {
     };
   }, []);
   return (
-    <>
+    <div>
       <Head>
         <meta aframe-injected name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui,viewport-fit=cover" />
         <meta aframe-injected name="mobile-web-app-capable" content="yes"/>
@@ -31,7 +31,7 @@ export default function ARScene() {
       </Head>
       
       <body style={{ margin: 0, overflow: 'hidden' }}>
-          <a-scene embedded arjs="sourceType: webcam;">
+          <a-scene embedded xr-mode-ui="enabled:false" arjs="sourceType: webcam;">
             <a-assets>
               <a-asset-item
                 id="therapist"
@@ -52,6 +52,6 @@ export default function ARScene() {
           </a-scene>
       </body>
       <div id="root"></div>
-    </>
+    </div>
   );
 }
